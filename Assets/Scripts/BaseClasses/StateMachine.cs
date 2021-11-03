@@ -13,7 +13,6 @@ public abstract class StateMachine : MonoBehaviour
     #endregion
 
 
-    #region Methods
     public void ChangeState<T>() where T : State
     {
         T targetState = GetComponent<T>();
@@ -62,6 +61,6 @@ public abstract class StateMachine : MonoBehaviour
             CurrentState.Tick();
         }
     }
-    #endregion
+
     
 }
