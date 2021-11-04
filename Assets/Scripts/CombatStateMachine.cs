@@ -11,7 +11,7 @@ public class CombatStateMachine : StateMachine
     
     void Start()
     {
-        ChangeState<EnterCombatState>();
+        ChangeState<NormalPlayState>();
     }
 
     

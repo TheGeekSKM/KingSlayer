@@ -6,6 +6,7 @@ using UnityEngine;
 public class InputController : MonoBehaviour
 {
     public event Action PressedConfirm = delegate { };
+    public event Action PressedActionConfirm = delegate { };
     public event Action PressedCancel = delegate { };
     public event Action PressedLeft = delegate { };
     public event Action PressedRight = delegate { };
@@ -44,6 +45,14 @@ public class InputController : MonoBehaviour
     public void DetectConfirm()
     {
         if (Input.GetKeyDown(KeyCode.Space))
+        {
+            PressedConfirm?.Invoke();
+        }
+    }
+
+    public void DetectAttackConfirm()
+    {
+        if (Input.GetKeyDown(KeyCode.Y))
         {
             PressedConfirm?.Invoke();
         }
