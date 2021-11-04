@@ -20,4 +20,9 @@ public class MainMenuControllerScript : MonoBehaviour
         //have to make sure that the build index for the actual game scene is always 1 + the buildIndex of the main menu scene.
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+
+    public void GoToMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
 }

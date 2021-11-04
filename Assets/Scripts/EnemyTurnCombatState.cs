@@ -8,6 +8,11 @@ public class EnemyTurnCombatState : CombatState
     public static event Action EnemyTurnBegan;
     public static event Action EnemyTurnEnded;
 
+    [SerializeField] int numEnemyHeals = 3;
+
+    [SerializeField] Health _enemyHealth;
+    [SerializeField] Health _playerHealth;
+
     [SerializeField] float _pauseDuration = 1.5f;
 
     public override void Enter()
@@ -29,6 +34,17 @@ public class EnemyTurnCombatState : CombatState
         yield return new WaitForSeconds(pauseDuration);
 
         Debug.Log("Enemy performs action");
+
+        if (_enemyHealth.HealthAmount <= 4 && numEnemyHeals > 0)
+        {
+            _enemyHealth.IncreaseHealth(2);
+            numEnemyHeals--;
+        }
+        else
+        {
+            _playerHealth.DecreaseHealth(2);
+        }
+
         EnemyTurnEnded?.Invoke();
 
         StateMachine.ChangeState<PlayerCardSelectState>();

@@ -41,7 +41,7 @@ public class InputController : MonoBehaviour
             PressedCancel?.Invoke();
         }
     }
-    private void DetectConfirm()
+    public void DetectConfirm()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
