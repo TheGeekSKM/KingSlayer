@@ -12,6 +12,17 @@ public class PlayerCardSelectState : CombatState
     //Player and Enemy Variables
     [SerializeField] Health _playerHealth;
     [SerializeField] Health _enemyHealth;
+    public Health EnemyHealth 
+    {
+        get
+        {
+            return _enemyHealth;
+        }
+        set
+        {
+            _enemyHealth = value;
+        }
+    }
 
     bool _attackCard = false;
     bool _healCard = false;

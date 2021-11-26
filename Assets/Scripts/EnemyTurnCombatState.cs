@@ -11,6 +11,17 @@ public class EnemyTurnCombatState : CombatState
     [SerializeField] int numEnemyHeals = 3;
 
     [SerializeField] Health _enemyHealth;
+    public Health EnemyHealth 
+    {
+        get
+        {
+            return _enemyHealth;
+        }
+        set
+        {
+            _enemyHealth = value;
+        }
+    }
     [SerializeField] Health _playerHealth;
 
     [SerializeField] float _pauseDuration = 1.5f;

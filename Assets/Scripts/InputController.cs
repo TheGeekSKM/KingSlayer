@@ -18,6 +18,7 @@ public class InputController : MonoBehaviour
         DetectCancel();
         DetectLeft();
         DetectRight();
+        DetectAttackConfirm();
         
     }
 

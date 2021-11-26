@@ -6,11 +6,24 @@ public class EnterCombatState : CombatState
 {
     [SerializeField] int _startingCardNumber;
     [SerializeField] int _numOfPlayers = 2;
-
-    [SerializeField] Camera _mainCamera;
-    [SerializeField] Vector3 _combatCameraPosition;
+    [SerializeField] Transform _enemyTransform;
+    public Transform EnemyTransform
+    {
+        get
+        {
+            return _enemyTransform;
+        }
+        set
+        {
+            _enemyTransform = value;
+        }
+    }
     [SerializeField] Transform _playerTransform;
-    [SerializeField] GameObject _virtualCamera;
+
+    // [SerializeField] Camera _mainCamera;
+    // [SerializeField] Vector3 _combatCameraPosition;
+    // [SerializeField] Transform _playerTransform;
+    // [SerializeField] GameObject _virtualCamera;
  
     bool _activated = false;
 
@@ -19,9 +32,11 @@ public class EnterCombatState : CombatState
         Debug.Log("Setup:....Entering");
         Debug.Log("Creating " + _numOfPlayers + " players");
         Debug.Log("Creating deck with " + _startingCardNumber + " cards.");
-        _mainCamera.transform.position = _playerTransform.position + _combatCameraPosition;
-        _mainCamera.transform.rotation = Quaternion.identity;
-        _virtualCamera.gameObject.SetActive(false);
+        // _mainCamera.transform.position = _playerTransform.position + _combatCameraPosition;
+        // _mainCamera.transform.rotation = Quaternion.identity;
+        // _virtualCamera.gameObject.SetActive(false);
+
+        _enemyTransform.position = new Vector3(_playerTransform.position.x - 3, _enemyTransform.position.y, _playerTransform.position.z - 3);        
 
         _activated = false;
     }

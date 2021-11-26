@@ -9,7 +9,7 @@ public class Health : MonoBehaviour
     [SerializeField] int _healthAmount;
     [SerializeField] int _maxHealthAmount = 10;
     [SerializeField] int _lives;
-    [SerializeField] TextMeshPro _healthText;
+    // [SerializeField] TextMeshPro _healthText;
 
     public event Action DeathEvent = delegate { };
 
@@ -48,7 +48,7 @@ public class Health : MonoBehaviour
             Death();
         }
 
-        _healthText.text = "HP: " + _healthAmount.ToString();
+        // _healthText.text = "HP: " + _healthAmount.ToString();
     }
 
 
