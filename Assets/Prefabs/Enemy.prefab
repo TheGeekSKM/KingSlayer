@@ -63,6 +63,7 @@ MonoBehaviour:
   _healthAmount: 10
   _maxHealthAmount: 10
   _lives: 1
+  _healthSlider: {fileID: 0}
 --- !u!54 &6147881011453148877
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -94,7 +95,10 @@ MonoBehaviour:
   _stateMachine: {fileID: 0}
   _pCSState: {fileID: 0}
   _eTCState: {fileID: 0}
+  _eCState: {fileID: 0}
+  _hgController: {fileID: 0}
   _enemyHealth: {fileID: 1735122610292358415}
+  _enemyTransform: {fileID: 0}
 --- !u!1001 &5358605896355637970
 PrefabInstance:
   m_ObjectHideFlags: 0

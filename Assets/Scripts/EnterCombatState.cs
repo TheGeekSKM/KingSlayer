@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class EnterCombatState : CombatState
 {
@@ -19,6 +20,9 @@ public class EnterCombatState : CombatState
         }
     }
     [SerializeField] Transform _playerTransform;
+    [SerializeField] TextMeshProUGUI _turnText;
+
+
 
     // [SerializeField] Camera _mainCamera;
     // [SerializeField] Vector3 _combatCameraPosition;
@@ -36,7 +40,11 @@ public class EnterCombatState : CombatState
         // _mainCamera.transform.rotation = Quaternion.identity;
         // _virtualCamera.gameObject.SetActive(false);
 
-        _enemyTransform.position = new Vector3(_playerTransform.position.x - 3, _enemyTransform.position.y, _playerTransform.position.z - 3);        
+        _enemyTransform.position = new Vector3(_playerTransform.position.x - 3, _enemyTransform.position.y, _playerTransform.position.z - 3); 
+        if (!_turnText.enabled)
+        {
+            _turnText.enabled = true;
+        }       
 
         _activated = false;
     }

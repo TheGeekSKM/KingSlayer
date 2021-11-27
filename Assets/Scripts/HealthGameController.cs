@@ -6,18 +6,18 @@ using UnityEngine.SceneManagement;
 public class HealthGameController : MonoBehaviour
 {
     [SerializeField] Health _playerHealth;
-    [SerializeField] Health _enemyHealth;
+
 
     void OnEnable()
     {
         _playerHealth.DeathEvent += OnPlayerDeath;
-        _enemyHealth.DeathEvent += OnEnemyDeath;
+
     }
 
     void OnDisable()
     {
         _playerHealth.DeathEvent -= OnPlayerDeath;
-        _enemyHealth.DeathEvent -= OnEnemyDeath;
+
     }
 
     void OnPlayerDeath()
@@ -25,10 +25,7 @@ public class HealthGameController : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
     }
 
-    void OnEnemyDeath()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
+   
 
 
     

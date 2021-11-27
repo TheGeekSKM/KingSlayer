@@ -152,7 +152,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _startingCardNumber: 10
   _numOfPlayers: 2
-  _mainCamera: {fileID: 0}
+  _enemyTransform: {fileID: 0}
+  _playerTransform: {fileID: 0}
+  _turnText: {fileID: 0}
 --- !u!114 &7006606451431864021
 MonoBehaviour:
   m_ObjectHideFlags: 0

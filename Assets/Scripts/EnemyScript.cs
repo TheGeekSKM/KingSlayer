@@ -10,6 +10,7 @@ public class EnemyScript : MonoBehaviour
     [SerializeField] PlayerCardSelectState _pCSState;
     [SerializeField] EnemyTurnCombatState _eTCState;
     [SerializeField] EnterCombatState _eCState;
+    [SerializeField] HealthGameController _hgController;
 
     [Header("Own Connections")]
     [SerializeField] Health _enemyHealth;
@@ -20,6 +21,7 @@ public class EnemyScript : MonoBehaviour
         _pCSState.EnemyHealth = _enemyHealth;
         _eTCState.EnemyHealth = _enemyHealth;
         _eCState.EnemyTransform = this.transform;
+
     }
 
     void OnTriggerEnter(Collider other)
