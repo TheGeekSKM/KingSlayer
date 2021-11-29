@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.02
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 1, g: 1, b: 1, a: 1}
+  m_AmbientSkyColor: {r: 1, g: 0.9386792, b: 0.9386792, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -566,6 +566,11 @@ PrefabInstance:
       propertyPath: _enemyHealth
       value: 
       objectReference: {fileID: 1450920540}
+    - target: {fileID: 7006606451431864021, guid: b53bbda3be135e549a361935d6eb76d2,
+        type: 3}
+      propertyPath: _runPercentage
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 7006606451431864026, guid: b53bbda3be135e549a361935d6eb76d2,
         type: 3}
       propertyPath: _playerHealth

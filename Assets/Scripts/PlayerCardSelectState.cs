@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PlayerCardSelectState : CombatState
 {
     [SerializeField] TextMeshProUGUI _playerTurnTextUI;
     [SerializeField] GameObject _playerCardPanel;
+    [SerializeField] float _runPercentage;
 
     //Player and Enemy Variables
     [SerializeField] Health _playerHealth;
@@ -87,7 +89,18 @@ public class PlayerCardSelectState : CombatState
 
     void RunAway()
     {
-        _playerHealth.DecreaseHealth(100);
+        // _playerHealth.DecreaseHealth(100);
+        float randomPercentage = Random.Range(1f, 100f);
+        Debug.Log(randomPercentage);
+
+        if (randomPercentage < _runPercentage)
+        {
+
+            // StateMachine.ChangeState<NormalPlayState>();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+        }
+
     }
 
 
