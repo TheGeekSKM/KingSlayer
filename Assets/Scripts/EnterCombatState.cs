@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using TMPro;
 
 public class EnterCombatState : CombatState
@@ -8,6 +9,7 @@ public class EnterCombatState : CombatState
     [SerializeField] int _startingCardNumber;
     [SerializeField] int _numOfPlayers = 2;
     [SerializeField] Transform _enemyTransform;
+    public NavMeshAgent enemyAI;
     public Transform EnemyTransform
     {
         get
@@ -45,6 +47,11 @@ public class EnterCombatState : CombatState
         {
             _turnText.enabled = true;
         }       
+
+        if (enemyAI != null)
+        {
+            enemyAI.SetDestination(_enemyTransform.position);
+        }
 
         _activated = false;
     }

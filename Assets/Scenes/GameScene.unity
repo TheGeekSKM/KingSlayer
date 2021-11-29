@@ -112,7 +112,7 @@ NavMeshSettings:
     agentSlope: 45
     agentClimb: 0.4
     ledgeDropHeight: 0
-    maxJumpAcrossDistance: 0
+    maxJumpAcrossDistance: 1
     minRegionArea: 2
     manualCellSize: 0
     cellSize: 0.16666667
@@ -121,7 +121,7 @@ NavMeshSettings:
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 9a3fdd8a7ae11264d9f1f2c688665c24, type: 2}
 --- !u!1001 &159921557
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -421,6 +421,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: roomWalls2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 75163b93d196f34479693e4c4bfd14e1,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 75163b93d196f34479693e4c4bfd14e1,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75163b93d196f34479693e4c4bfd14e1, type: 3}
 --- !u!1 &276642991 stripped
@@ -563,12 +573,6 @@ PrefabInstance:
       objectReference: {fileID: 8195111841950614392}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b53bbda3be135e549a361935d6eb76d2, type: 3}
---- !u!4 &530434800 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2426637699364952380, guid: f49a7a4498990884f9d122abf802eab4,
-    type: 3}
-  m_PrefabInstance: {fileID: 535797453}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &533280497
 GameObject:
   m_ObjectHideFlags: 0
@@ -625,17 +629,29 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 162460163}
     - target: {fileID: 530434801, guid: f49a7a4498990884f9d122abf802eab4, type: 3}
-      propertyPath: _enemyTransform
-      value: 
-      objectReference: {fileID: 530434800}
-    - target: {fileID: 530434801, guid: f49a7a4498990884f9d122abf802eab4, type: 3}
       propertyPath: _hgController
       value: 
       objectReference: {fileID: 811356655}
+    - target: {fileID: 530434801, guid: f49a7a4498990884f9d122abf802eab4, type: 3}
+      propertyPath: _playerTransform
+      value: 
+      objectReference: {fileID: 8195111841950614395}
+    - target: {fileID: 1300509134, guid: f49a7a4498990884f9d122abf802eab4, type: 3}
+      propertyPath: m_Radius
+      value: 1.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 1300509134, guid: f49a7a4498990884f9d122abf802eab4, type: 3}
+      propertyPath: m_Height
+      value: 5.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 1300509134, guid: f49a7a4498990884f9d122abf802eab4, type: 3}
+      propertyPath: m_Speed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2426637699364952380, guid: f49a7a4498990884f9d122abf802eab4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.6908112
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 2426637699364952380, guid: f49a7a4498990884f9d122abf802eab4,
         type: 3}
@@ -645,7 +661,7 @@ PrefabInstance:
     - target: {fileID: 2426637699364952380, guid: f49a7a4498990884f9d122abf802eab4,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 13.447703
+      value: 100.8
       objectReference: {fileID: 0}
     - target: {fileID: 2426637699364952380, guid: f49a7a4498990884f9d122abf802eab4,
         type: 3}
@@ -686,6 +702,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5609003360006573369, guid: f49a7a4498990884f9d122abf802eab4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.4
       objectReference: {fileID: 0}
     - target: {fileID: 7474797858301614520, guid: f49a7a4498990884f9d122abf802eab4,
         type: 3}
@@ -791,6 +812,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: roomFloor
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f4055c8a2d5a608449ed01145ade55e1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f4055c8a2d5a608449ed01145ade55e1,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4055c8a2d5a608449ed01145ade55e1, type: 3}
 --- !u!114 &811356655 stripped
@@ -876,6 +907,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: roomFloor
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f4055c8a2d5a608449ed01145ade55e1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f4055c8a2d5a608449ed01145ade55e1,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4055c8a2d5a608449ed01145ade55e1, type: 3}
@@ -982,6 +1023,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: roomWalls2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 75163b93d196f34479693e4c4bfd14e1,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 75163b93d196f34479693e4c4bfd14e1,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75163b93d196f34479693e4c4bfd14e1, type: 3}
@@ -1168,6 +1219,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: roomFloor
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f4055c8a2d5a608449ed01145ade55e1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f4055c8a2d5a608449ed01145ade55e1,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4055c8a2d5a608449ed01145ade55e1, type: 3}
@@ -1439,6 +1500,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: roomWalls2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 75163b93d196f34479693e4c4bfd14e1,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 75163b93d196f34479693e4c4bfd14e1,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75163b93d196f34479693e4c4bfd14e1, type: 3}
 --- !u!1 &1237584465
@@ -1684,6 +1755,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: roomWalls2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 75163b93d196f34479693e4c4bfd14e1,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 75163b93d196f34479693e4c4bfd14e1,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75163b93d196f34479693e4c4bfd14e1, type: 3}
 --- !u!4 &1481672342 stripped
@@ -1717,6 +1798,36 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 100.000046, y: 100.00002, z: 0.000023841862}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1502806057
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1502806058}
+  m_Layer: 0
+  m_Name: EnemyAI_NavMesh
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1502806058
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1502806057}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 55.602573, y: 60.030483, z: 26.62712}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1548061281
 GameObject:
   m_ObjectHideFlags: 0
@@ -2146,6 +2257,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: roomFloor
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f4055c8a2d5a608449ed01145ade55e1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f4055c8a2d5a608449ed01145ade55e1,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4055c8a2d5a608449ed01145ade55e1, type: 3}
 --- !u!4 &1881383327 stripped
@@ -2286,6 +2407,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 32113802, guid: a9feb60127d7b4842a347a397a8321db, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 32113804, guid: a9feb60127d7b4842a347a397a8321db, type: 3}
       propertyPath: m_InnerSpotAngle
       value: 41.448193
@@ -2319,6 +2444,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlayerObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 8195111840405835108, guid: a9feb60127d7b4842a347a397a8321db,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8195111840405835109, guid: a9feb60127d7b4842a347a397a8321db,
         type: 3}
@@ -2374,6 +2504,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8195111840491671982, guid: a9feb60127d7b4842a347a397a8321db,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8195111840533875879, guid: a9feb60127d7b4842a347a397a8321db,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8195111840577434822, guid: a9feb60127d7b4842a347a397a8321db,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8195111840680935159, guid: a9feb60127d7b4842a347a397a8321db,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9feb60127d7b4842a347a397a8321db, type: 3}
