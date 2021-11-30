@@ -15,19 +15,19 @@ public abstract class CollectibleBase : MonoBehaviour
 
     [SerializeField] ParticleSystem _collectParticles;
     [SerializeField] AudioClip _collectSound;
-    Rigidbody _rb;
+    [SerializeField] Rigidbody _rb;
 
     private void Awake()
     {
-        _rb = GetComponent<Rigidbody>();
+        // _rb = GetComponent<Rigidbody>();
     }
 
     private void Update()
     {
-        if (transform.position.z <= zValueToDespawn)
-        {
-            Destroy(gameObject);
-        }
+        // if (transform.position.z <= zValueToDespawn)
+        // {
+        //     Destroy(gameObject);
+        // }
     }
 
     private void FixedUpdate()
@@ -40,7 +40,7 @@ public abstract class CollectibleBase : MonoBehaviour
         Quaternion turnOffset = Quaternion.Euler(0, _movementSpeed, 0);
         rb.MoveRotation(_rb.rotation * turnOffset);
 
-        // Vector3 moveOffset = new Vector3(0, 0, (-1 * _moveSpeed));
+        //Vector3 moveOffset = new Vector3(0, 0, (-1 * _moveSpeed));
         // rb.MovePosition(_rb.position + moveOffset);
     }
 
@@ -67,5 +67,7 @@ public abstract class CollectibleBase : MonoBehaviour
         {
             AudioHelper.PlayClip2D(_collectSound, 1f);
         }
+
+        
     }
 }

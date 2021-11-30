@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using TMPro;
 
 public class PlayerInventory : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class PlayerInventory : MonoBehaviour
     public event Action GotAllKeys = delegate { };
     [SerializeField] int _numKeysCollected;
     [SerializeField] int _numKeysNeeded;
+    [SerializeField] TextMeshProUGUI _keyText;
+    [SerializeField] public Health playerHealth;
     public int NumKeysCollected 
         {
         get
@@ -28,6 +31,10 @@ public class PlayerInventory : MonoBehaviour
         {
             GotAllKeys?.Invoke();
         }
+
+        _keyText.text = _numKeysCollected.ToString();
+
+        Debug.Log(_numKeysCollected);
     }
 
 

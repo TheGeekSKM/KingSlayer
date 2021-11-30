@@ -7,7 +7,8 @@ public class KeyCollectible : CollectibleBase
    
     protected override void Collect(PlayerInventory player)
     {
-
+        player.AddKey();
+        Destroy(gameObject);
     }
 
 

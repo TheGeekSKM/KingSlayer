@@ -14,6 +14,7 @@ public static class AudioHelper
         audioSource.clip = clip;
         audioSource.volume = volume;
 
+
         //activate it
         audioSource.Play();
         Object.Destroy(audioObject, clip.length);

@@ -45,17 +45,17 @@ public class InputController : MonoBehaviour
     }
     public void DetectConfirm()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            PressedConfirm?.Invoke();
-        }
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    PressedConfirm?.Invoke();
+        //}
     }
 
     public void DetectAttackConfirm()
     {
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-            PressedConfirm?.Invoke();
-        }
+        //if (Input.GetKeyDown(KeyCode.Y))
+        //{
+        //    PressedConfirm?.Invoke();
+        //}
     }
 }

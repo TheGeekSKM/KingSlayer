@@ -21,8 +21,17 @@ public class EnemyScript : MonoBehaviour
     [Header("Own Connections")]
     [SerializeField] Health _enemyHealth;
     [SerializeField] Transform _enemyTransform;
-
     [SerializeField] NavMeshAgent _navMesh;
+
+    [Header("Editable Values")]
+    [SerializeField] private bool useFootSteps = true;
+
+    [Header("Sound Variables")]
+    [SerializeField] private float _baseSoundSpeed = 0.5f;
+    [SerializeField] private AudioSource _soundSource = default;
+    [SerializeField] private List<AudioClip> _soundClipsList = new List<AudioClip>();
+    private float footStepTimer = 0f;
+
     public NavMeshAgent Agent
     {
         get
@@ -72,6 +81,11 @@ public class EnemyScript : MonoBehaviour
         {
             Chase();
         }
+
+        if (useFootSteps)
+        {
+            HandleSounds();
+        }
     }
 
 
@@ -97,10 +111,11 @@ public class EnemyScript : MonoBehaviour
 
     void SearchPoint()
     {
-        float randomZvalue = Random.Range(-walkRange, walkRange);
-        float randomXvalue = Random.Range(-walkRange, walkRange);
+        float randomZvalue = Random.Range(-48.2f, 148.5f);
+        float randomXvalue = Random.Range(-48.2f, 146.4f);
 
-        walkLocation = new Vector3(transform.position.x + randomXvalue, transform.position.y, transform.position.z + randomZvalue);
+        //walkLocation = new Vector3(transform.position.x + randomXvalue, transform.position.y, transform.position.z + randomZvalue);
+        walkLocation = new Vector3(randomXvalue, transform.position.y, randomZvalue);
 
         if (Physics.Raycast(walkLocation, -transform.up, 2f, _groundMask))
         {
@@ -111,6 +126,20 @@ public class EnemyScript : MonoBehaviour
     void Chase()
     {
         _navMesh.SetDestination(_playerTransform.position);
+    }
+
+    private void HandleSounds()
+    {      
+
+        footStepTimer -= Time.deltaTime;
+
+        if (footStepTimer <= 0)
+        {
+            int randomNum = Random.Range(0, _soundClipsList.Count);
+            Debug.Log(randomNum);
+            _soundSource.PlayOneShot(_soundClipsList[randomNum]);
+            footStepTimer = _baseSoundSpeed;
+        }
     }
 
 
