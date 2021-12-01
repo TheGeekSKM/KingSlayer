@@ -8,11 +8,15 @@ using UnityEngine.SceneManagement;
 public class PlayerCardSelectState : CombatState
 {
     [SerializeField] TextMeshProUGUI _playerTurnTextUI;
+    [SerializeField] TextMeshProUGUI _helpText;
     [SerializeField] GameObject _playerCardPanel;
     [SerializeField] float _runPercentage;
 
+
+
     //Player and Enemy Variables
     [SerializeField] Health _playerHealth;
+    [SerializeField] PlayerInventory _playerInventory;
     [SerializeField] Health _enemyHealth;
     public Health EnemyHealth 
     {
@@ -45,11 +49,16 @@ public class PlayerCardSelectState : CombatState
         StateMachine.Input.PressedConfirm += OnPressedConfirm;
     }
 
+    //public override void Tick()
+    //{
+        
+    //}
+
     public override void Exit()
     {
         // _playerTurnTextUI.gameObject.SetActive(false);
         _playerTurnTextUI.text = "Enemy's Turn";
-        _playerCardPanel.SetActive(false);
+        
 
         Debug.Log("Player Turn:....Exiting");
 
@@ -84,7 +93,22 @@ public class PlayerCardSelectState : CombatState
 
     void HealPlayers()
     {
-        _playerHealth.IncreaseHealth(2);
+        if (_playerInventory._numHeals > 0)
+        {
+            _playerHealth.IncreaseHealth(2);
+            _playerInventory._numHeals--;
+        }
+        else
+        {
+            StartCoroutine(OutOfHeals());
+        }
+    }
+
+    private IEnumerator OutOfHeals()
+    {
+        _helpText.text = "You are out of heals!";
+        yield return new WaitForSeconds(2);
+        _helpText.text = "Press Space Bar to End Turn";
     }
 
     void RunAway()
@@ -97,6 +121,7 @@ public class PlayerCardSelectState : CombatState
         {
 
             // StateMachine.ChangeState<NormalPlayState>();
+            _playerCardPanel.SetActive(false);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
         }

@@ -11,7 +11,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] public float jumpHeight = 3f;
     [SerializeField] public float groundDistance = 0.4f;
     [SerializeField] public float sprintSpeed = 7f;
-    [SerializeField] public int playerStamina = 100;
+    [SerializeField] public float playerStamina = 100f;
+    [SerializeField] public float currentStamina;
     //[SerializeField] private float _timeBetweenRegen = 0.2f;
     [SerializeField] private bool useFootSteps = true;
     [SerializeField] private bool useHeadBob = true;
@@ -42,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
 
 
 
-    private float currentStamina;
+
 
     private WaitForSeconds regenTick = new WaitForSeconds(0.2f);
     private Coroutine regen;
@@ -58,6 +59,7 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         defaultCameraYPos = camComponent.transform.localPosition.y;
+
     }
 
 
@@ -155,6 +157,26 @@ public class PlayerMovement : MonoBehaviour
         {
             sprintSpeed = 0f;
             camComponent.fieldOfView = Mathf.Lerp(70f, 60f, 10f);
+        }
+    }
+
+    public void StaminaBoost()
+    {
+        currentStamina += 40f;
+
+        if (currentStamina > playerStamina)
+        {
+            currentStamina = playerStamina;
+        }
+    }
+
+    public void StaminaBoost(float stamBoostNum)
+    {
+        currentStamina += stamBoostNum;
+
+        if (currentStamina > playerStamina)
+        {
+            currentStamina = playerStamina;
         }
     }
 

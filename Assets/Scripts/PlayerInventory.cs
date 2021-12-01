@@ -11,7 +11,13 @@ public class PlayerInventory : MonoBehaviour
     [SerializeField] int _numKeysCollected;
     [SerializeField] int _numKeysNeeded;
     [SerializeField] TextMeshProUGUI _keyText;
-    [SerializeField] public Health playerHealth;
+    [SerializeField] public int _numHeals;
+
+    [SerializeField] public PlayerMovement _playerMovement;
+
+    [SerializeField] TextMeshProUGUI _healsText;
+
+    //[SerializeField] public Health playerHealth;
     public int NumKeysCollected 
         {
         get
@@ -33,11 +39,20 @@ public class PlayerInventory : MonoBehaviour
         }
 
         _keyText.text = _numKeysCollected.ToString();
+        _healsText.text = _numHeals.ToString();
 
         Debug.Log(_numKeysCollected);
     }
 
+    public void AddHealPotion()
+    {
+        _numHeals++;
+    }
 
+    public void AddHealPotion(int num)
+    {
+        _numHeals += num;
+    }
 
     public void AddKey()
     {

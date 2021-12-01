@@ -9,6 +9,7 @@ public class EnterCombatState : CombatState
     [SerializeField] int _startingCardNumber;
     [SerializeField] int _numOfPlayers = 2;
     [SerializeField] Transform _enemyTransform;
+    [SerializeField] GameObject _normalPlayMenus;
     public NavMeshAgent enemyAI;
     public Transform EnemyTransform
     {
@@ -35,12 +36,16 @@ public class EnterCombatState : CombatState
 
     public override void Enter()
     {
+        
+        
         Debug.Log("Setup:....Entering");
         Debug.Log("Creating " + _numOfPlayers + " players");
         Debug.Log("Creating deck with " + _startingCardNumber + " cards.");
         // _mainCamera.transform.position = _playerTransform.position + _combatCameraPosition;
         // _mainCamera.transform.rotation = Quaternion.identity;
         // _virtualCamera.gameObject.SetActive(false);
+        _normalPlayMenus.SetActive(false);
+        Cursor.visible = true;
 
         _enemyTransform.position = new Vector3(_playerTransform.position.x - 3, _enemyTransform.position.y, _playerTransform.position.z - 3); 
         if (!_turnText.enabled)
