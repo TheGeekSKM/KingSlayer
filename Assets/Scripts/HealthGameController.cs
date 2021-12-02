@@ -25,11 +25,13 @@ public class HealthGameController : MonoBehaviour
 
     void OnPlayerDeath()
     {
+        Cursor.visible = true;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
     }
 
     void OnKeysGotten()
     {
+        Cursor.visible = true;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 

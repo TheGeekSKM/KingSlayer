@@ -133,7 +133,7 @@ public class EnemyScript : MonoBehaviour
 
         footStepTimer -= Time.deltaTime;
 
-        if (footStepTimer <= 0)
+        if (footStepTimer <= 0 && !PauseMenuScript.isPaused)
         {
             int randomNum = Random.Range(0, _soundClipsList.Count);
             Debug.Log(randomNum);
